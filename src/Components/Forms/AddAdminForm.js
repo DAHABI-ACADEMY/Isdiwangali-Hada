@@ -4,7 +4,7 @@ import useForm from '../../Hooks/useForm'
 
 const AddAdminForm = () => {
     const handleAdminAdd = () => {
-        fetch('https://us-central1-elearning-project-5423b.cloudfunctions.net/addAdmin', {
+        fetch('https://us-central1-dahabi-academy.cloudfunctions.net/addAdmin', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -17,11 +17,9 @@ const AddAdminForm = () => {
                 phone: inputs.phone,
             })
         })
-        .then((res) => (res.json()))
-        .then((result) => {
-            console.log(result)
-        }).catch(err => {
-            console.log(err)
+        .then((res) => res.json())
+        .catch(err => {
+            console.error('addAdmin failed', err)
         })
     }
 

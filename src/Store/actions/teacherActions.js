@@ -9,7 +9,7 @@ export const updateTeacherDisplayPic = (teacher, url) => {
                 img: url
             })
             .catch((err)=> {
-                console.log(err)
+                console.error(err)
             })
     }
 }
@@ -40,7 +40,7 @@ export const updateTeacherInfo = (teacher) => {
             {merge: true}
             )
             .catch((err) => {
-                console.log(err)
+                console.error(err)
             })
     }
 }

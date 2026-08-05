@@ -47,7 +47,6 @@ const TeacherTable = ({teachers, sortedByBranch, branch}) => {
 
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return{
         teachers: state.firestore.ordered.users || [],
         sortedByBranch: state.firestore.ordered.sortedByBranch || [],

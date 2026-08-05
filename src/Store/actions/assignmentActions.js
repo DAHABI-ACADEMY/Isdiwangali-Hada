@@ -4,8 +4,6 @@ export const addNewAssignment = (assignment) => {
     return (dispatch, getState, {getFirestore}) => {
         const firestore = getFirestore();
 
-        console.log(assignment)
-
         firestore
             .add({collection: 'assignments'},
                 {
@@ -17,7 +15,7 @@ export const addNewAssignment = (assignment) => {
                     lastDate: assignment.lastDate,
                     submissions: []
                 }).catch((err)=> {
-                console.log(err)
+                console.error(err)
             })
     }
 }
@@ -49,9 +47,6 @@ export const addMarks = (assignment, submission, marks) => {
     return (dispatch, getState, {getFirebase}) => {
         const firebase = getFirebase();
         const firestore = getFirebase().firestore();
-
-        console.log(assignment, submission, marks)
-
 
         firestore
             .collection('assignments')
@@ -90,7 +85,7 @@ export const addNewSubmission = (assignment, student, url, srn) => {
                 })
             })
             .catch((err)=> {
-                console.log(err)
+                console.error(err)
             })
     }
 }

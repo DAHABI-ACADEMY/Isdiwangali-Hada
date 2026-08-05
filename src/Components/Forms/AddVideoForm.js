@@ -20,7 +20,7 @@ const AddVideoForm = ({course, addNewVideo}) => {
             contentType: 'video/mp4',
         }
         const uploadTask = storage.ref(`/courseVideos/${title}`).put(newVideo, metadata);
-        uploadTask.on("state_changed", console.log, console.error, () => {
+        uploadTask.on("state_changed", null, console.error, () => {
           storage
             .ref("courseVideos")
             .child(title)

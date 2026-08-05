@@ -65,7 +65,7 @@ export const addNewVideo = (course, title, url) => {
                 })
             })
             .catch((err)=> {
-                console.log(err)
+                console.error(err)
                 dispatch({
                     type: 'IMAGE_UPLOAD_ERROR',
                     error: err,
@@ -92,14 +92,12 @@ export const removeVideo = (course, title, url) => {
             })
             .then(() => {
                 var deleteTask = storage.ref().child(`courseVideos/${title}`)
-                deleteTask.delete().then(() => {
-                    console.log('Deleted File')
-                }).catch((err) => {
-                    console.log(err)
+                deleteTask.delete().catch((err) => {
+                    console.error(err)
                 })
             })
             .catch((err)=> {
-                console.log(err)
+                console.error(err)
                 dispatch({
                     type: 'IMAGE_UPLOAD_ERROR',
                     error: err,
@@ -125,7 +123,7 @@ export const addResource = (course, title, url)  => {
                 })
             })
             .catch((err)=> {
-                console.log(err)
+                console.error(err)
                 dispatch({
                     type: 'IMAGE_UPLOAD_ERROR',
                     error: err,
@@ -151,14 +149,12 @@ export const removeResource = (course, title, url) => {
             })
             .then(() => {
                 var deleteTask = storage.ref().child(`courseResources/${title}`)
-                deleteTask.delete().then(() => {
-                    console.log('Deleted File')
-                }).catch((err) => {
-                    console.log(err)
+                deleteTask.delete().catch((err) => {
+                    console.error(err)
                 })
             })
             .catch((err)=> {
-                console.log(err)
+                console.error(err)
                 dispatch({
                     type: 'IMAGE_UPLOAD_ERROR',
                     error: err,

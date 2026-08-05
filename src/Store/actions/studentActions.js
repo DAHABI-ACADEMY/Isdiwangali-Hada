@@ -56,8 +56,6 @@ export const updateStudentInfo = (student) => {
     return(dispatch, getState, {getFirebase}) => {
         const firestore = getFirebase().firestore();
         
-        console.log(student)
-        
         firestore
             .collection('users')
             .doc(student.id)

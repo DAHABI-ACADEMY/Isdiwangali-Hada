@@ -27,10 +27,9 @@ export const removeQuestion = (question) => {
             .doc(question.id)
             .delete()
             .then(() => {
-                console.log("Deleted Question")
             })
             .catch((err) => {
-                console.log(err)
+                console.error(err)
             })
     }
 }
@@ -51,7 +50,7 @@ export const addComment = (question, comment, user) => {
                 })
             })
             .catch((err)=> {
-                console.log(err)
+                console.error(err)
             })
     }
 }
@@ -72,7 +71,7 @@ export const removeComment = (question, comment, user) => {
                 })
             })
             .catch((err)=> {
-                console.log(err)
+                console.error(err)
             })
     }
 }

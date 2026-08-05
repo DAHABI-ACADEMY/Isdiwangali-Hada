@@ -34,7 +34,6 @@ const StudentForum = ({user, questions}) => {
 
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return{
         questions: state.firestore.ordered.studentquestions,
         user: state.firebase.profile

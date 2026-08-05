@@ -44,83 +44,84 @@ const TeacherInfo = ({teacher,updateTeacherDisplayPic}) => {
         <>
             <Col>
                 <Row md="12">
-                <Col md="4">
-                <button className="upload-wrapper" type="file">
-                    <label className="camera-icon" htmlFor="profile_picture">
-                        <img src={Camera}></img>
-                    </label>
-                    <input type="file" id="profile_picture" hidden onChange={(e) => {e.preventDefault(); handleUpload(e.target.files[0], currentTeacher)}}></input>
-                </button>
-                    <CardImg src={currentTeacher.img || dummy.img} className="img rounded float-left">
-                    </CardImg>
-                        <Button className="button mt-2 mb-2" onClick={() => setIsOpen(true)}>Edit Info</Button>
-                <Col md="12">
-                <Card className="basic-info mt-3">
-                    <h4>Basic Info</h4>
-                    <Row md="6">
-                        <Col md='4'>
-                            <p className="info-label">Teacher Name: <span className="s-name">{currentTeacher.name}</span></p>
-                        </Col>
-                        <Col md="4">
-                            <p className="info-label">SRN: <span className="s-name">{currentTeacher.SRN}</span></p>
-                        </Col>
-                    </Row>
-                    <Row md="6">     
-                        <Col md='4'>
-                            <p className="info-label">Gender: <span className="s-name">{currentTeacher.gender}</span></p>
-                        </Col>
-                        <Col md='4'>
-                            <p className="info-label">Branch: <span className="s-name">{currentTeacher.Branch}</span></p>
-                        </Col>
-                    </Row>
-                    <Row md="6">
-                        <Col md='4'>
-                            <p className="info-label">Mother's Name: <span className="s-name">{currentTeacher.mother || ''}</span></p>
-                        </Col>
-                        <Col md="4">
-                            <p className="info-label">Father's Name: <span className="s-name"> {currentTeacher.father || ''}</span></p>
-                        </Col>
-                    </Row>
-                    <Row md="6">
-                        <Col md='4'>
-                            <p className="info-label">DOB: <span className="s-name">{currentTeacher.dob || ''}</span></p>
-                        </Col>
-                        <Col md="4">
-                            <p className="info-label">Phone: <span className="s-name"> +91 {currentTeacher.phone}</span></p>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md='12'>
-                            <p className="info-label">Address: <span className="s-name">{currentTeacher.address || ''}</span></p>
-                        </Col>
-                    </Row>
-                </Card>
-                <Card className="basic-info mt-3">
-                    <h4>Educational Info</h4>
-                    <Row md="6">
-                    <Col md='4'>
-                        <p className="info-label">SSLC: <span className="s-name">{currentTeacher.sslc || ''}</span></p>
-                    </Col>
                     <Col md="4">
-                        <p className="info-label">PUC: <span className="s-name">{currentTeacher.puc || ''}</span></p>
+                        <button className="upload-wrapper" type="file">
+                            <label className="camera-icon" htmlFor="profile_picture">
+                                <img src={Camera}></img>
+                            </label>
+                            <input type="file" id="profile_picture" hidden onChange={(e) => {e.preventDefault(); handleUpload(e.target.files[0], currentTeacher)}}></input>
+                        </button>
+                        <CardImg src={currentTeacher.img || dummy.img} className="img rounded float-left">
+                        </CardImg>
+                        <Button className="button mt-2 mb-2" onClick={() => setIsOpen(true)}>Edit Info</Button>
                     </Col>
-                    </Row>
-                    <Row md="6">
-                    <Col md='4'>
-                        <p className="info-label">Bachelor's Degree: <span className="s-name">{currentTeacher.bachelor || ''}</span></p>
+                    <Col md="8">
+                        <Card className="basic-info mt-3">
+                            <h4>Basic Info</h4>
+                            <Row md="6">
+                                <Col md='4'>
+                                    <p className="info-label">Teacher Name: <span className="s-name">{currentTeacher.name}</span></p>
+                                </Col>
+                                <Col md="4">
+                                    <p className="info-label">SRN: <span className="s-name">{currentTeacher.SRN}</span></p>
+                                </Col>
+                            </Row>
+                            <Row md="6">     
+                                <Col md='4'>
+                                    <p className="info-label">Gender: <span className="s-name">{currentTeacher.gender}</span></p>
+                                </Col>
+                                <Col md='4'>
+                                    <p className="info-label">Branch: <span className="s-name">{currentTeacher.Branch}</span></p>
+                                </Col>
+                            </Row>
+                            <Row md="6">
+                                <Col md='4'>
+                                    <p className="info-label">Mother's Name: <span className="s-name">{currentTeacher.mother || ''}</span></p>
+                                </Col>
+                                <Col md="4">
+                                    <p className="info-label">Father's Name: <span className="s-name"> {currentTeacher.father || ''}</span></p>
+                                </Col>
+                            </Row>
+                            <Row md="6">
+                                <Col md='4'>
+                                    <p className="info-label">DOB: <span className="s-name">{currentTeacher.dob || ''}</span></p>
+                                </Col>
+                                <Col md="4">
+                                    <p className="info-label">Phone: <span className="s-name"> +91 {currentTeacher.phone}</span></p>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col md='12'>
+                                    <p className="info-label">Address: <span className="s-name">{currentTeacher.address || ''}</span></p>
+                                </Col>
+                            </Row>
+                        </Card>
+                        <Card className="basic-info mt-3">
+                            <h4>Educational Info</h4>
+                            <Row md="6">
+                                <Col md='4'>
+                                    <p className="info-label">SSLC: <span className="s-name">{currentTeacher.sslc || ''}</span></p>
+                                </Col>
+                                <Col md="4">
+                                    <p className="info-label">PUC: <span className="s-name">{currentTeacher.puc || ''}</span></p>
+                                </Col>
+                            </Row>
+                            <Row md="6">
+                                <Col md='4'>
+                                    <p className="info-label">Bachelor's Degree: <span className="s-name">{currentTeacher.bachelor || ''}</span></p>
+                                </Col>
+                                <Col md='4'>
+                                    <p className="info-label">Master's Degree: <span className="s-name">{currentTeacher.master || ''}</span></p>
+                                </Col>
+                            </Row>
+                        </Card>
                     </Col>
-                    <Col md='4'>
-                        <p className="info-label">Master's Degree: <span className="s-name">{currentTeacher.master || ''}</span></p>
-                    </Col>
-                    </Row>
-                </Card>
-                </Col>
                 </Row>
                 <CustomModal title="Edit Teacher" modal={isOpen} toggle={toggle}>
                     <EditTeacherForm teacher={currentTeacher}></EditTeacherForm>
                 </CustomModal>
             </Col>
-            </>
+        </>
     )
 }
 

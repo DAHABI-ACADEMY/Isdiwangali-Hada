@@ -46,7 +46,6 @@ const Overview = ({profile, notifications}) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         profile: state.firebase.profile, 
         notifications: state.firestore.ordered.notifications

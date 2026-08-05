@@ -57,7 +57,6 @@ const CourseCard = ({courses, branch, sortedByBranch, removeCourse, admin}) => {
 
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return{
         courses: state.firestore.ordered.courses,
         sortedByBranch: state.firestore.ordered.sortedByBranch

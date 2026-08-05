@@ -8,7 +8,6 @@ const UploadAssignmentForm = ({addNewSubmission, assignment, profile}) => {
     const [currentAssigment, setCurrentAssignment] = useState(assignment)
     const student = profile.name;
     const srn = profile.SRN;
-    console.log(srn)
     const [file, setFile] = useState(undefined);
 
     const handleFile = (e) => {
@@ -22,7 +21,7 @@ const UploadAssignmentForm = ({addNewSubmission, assignment, profile}) => {
             contentType: 'application/pdf',
         }
         const uploadTask = storage.ref(`/assignmentSubmissions/${title}`).put(newFile, metadata);
-        uploadTask.on("state_changed", console.log, console.error, () => {
+        uploadTask.on("state_changed", null, console.error, () => {
           storage
             .ref("assignmentSubmissions")
             .child(title)

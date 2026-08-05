@@ -34,7 +34,6 @@ const AdminTable = ({admins}) => {
 
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return{
         admins: state.firestore.ordered.users || [],
     }   

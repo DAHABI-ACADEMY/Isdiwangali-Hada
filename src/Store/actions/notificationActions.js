@@ -11,9 +11,8 @@ export const addNewNotification = (notification) => {
                     desc: notification.desc
                 })
                 .then((dispatch)=>{
-                    console.log('succ')
                 }).catch((err)=>{
-                    console.log(err)
+                    console.error(err)
                 });   
             
     }

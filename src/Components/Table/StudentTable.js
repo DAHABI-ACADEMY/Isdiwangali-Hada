@@ -60,7 +60,6 @@ const StudentTable = ({students, sortedByBranch, branch, setStudentSuspended}) =
 
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return{
         students: state.firestore.ordered.users || [],
         sortedByBranch: state.firestore.ordered.sortedByBranch || [],

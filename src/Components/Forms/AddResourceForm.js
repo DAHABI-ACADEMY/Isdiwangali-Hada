@@ -20,7 +20,7 @@ const AddResourceForm = ({course, addResource}) => {
             contentType: 'application/pdf',
         }
         const uploadTask = storage.ref(`/courseResources/${title}`).put(newFile, metadata);
-        uploadTask.on("state_changed", console.log, console.error, () => {
+        uploadTask.on("state_changed", null, console.error, () => {
           storage
             .ref("courseResources")
             .child(title)
