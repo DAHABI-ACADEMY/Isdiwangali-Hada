@@ -7,17 +7,18 @@ import 'firebase/storage';
 
 
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_APIKEY,
-    authDomain: process.env.REACT_APP_AUTHDOMAIN,
-    databaseURL: process.env.REACT_APP_DB,
-    projectId: process.env.REACT_APP_PID,
-    storageBucket: process.env.REACT_APP_SB,
-    messagingSenderId: process.env.REACT_APP_SID,
-    appId: process.env.REACT_APP_APPID,
-    measurementId:process.env.REACT_APP_MID
+    apiKey: "AIzaSyDrQ-tycjjDU4gek1jz07IIg30VFio-1so",
+    authDomain: "dahabi-academy.firebaseapp.com",
+    databaseURL: "https://dahabi-academy-default-rtdb.firebaseio.com",
+    projectId: "dahabi-academy",
+    storageBucket: "dahabi-academy.firebasestorage.app",
+    messagingSenderId: "754314547074",
+    appId: "1:754314547074:web:cac5ac7ae057af9c0a499b",
+    measurementId: "G-HPFRJJRZCC"
 }
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+firebase.analytics();
 firebase.firestore();
 
 const storage = firebase.storage();
