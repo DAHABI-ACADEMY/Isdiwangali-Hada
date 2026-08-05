@@ -80,7 +80,8 @@ class Login extends React.Component{
             <Col md="8">
                    <Form onSubmit={this.handleSubmit}>
                    <Container className="signup-container">
-                   <h1 className="heading mt-5 mb-5">Login</h1>
+                   <h1 className="heading mt-5 mb-2">Dahabi Academy Login</h1>
+                   <p className="subtitle">Securely access your dashboard and learning resources.</p>
                    <Col>
                        <Row md='8'>
                            <FormGroup>

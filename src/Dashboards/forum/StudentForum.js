@@ -16,9 +16,9 @@ const StudentForum = ({user, questions}) => {
 
     return(
         <Container>
-            <h2 className="table-title mt-3 mb-3">Student Forum</h2>
+            <h2 className="table-title mt-3 mb-3">Dahabi Academy Forum</h2>
             <Col md="3" className="mt-3 mb-3">
-                {isStudent && <Button color="primary" className="button" onClick={toggle}>Add A Question</Button>}
+                {isStudent && <Button color="primary" className="button" onClick={toggle}>Ask a Question</Button>}
             </Col>
             <Row className="table-title mt-3 mb-3">
             {questions && questions.map((question) => (

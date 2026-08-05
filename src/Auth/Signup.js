@@ -102,7 +102,8 @@ class Signup extends React.Component{
          <Col md="8">
                 <Form onSubmit={this.handleSubmit}>
                 <Container className="signup-container">
-                <h1 className="heading m-auto p-auto">Signup</h1>
+                <h1 className="heading m-auto p-auto">Join Dahabi Academy</h1>
+                <p className="subtitle">Create your account and start learning today.</p>
                 <Row className="mt-4 mb-4">
                     <Col md='5'>
                         <FormGroup>

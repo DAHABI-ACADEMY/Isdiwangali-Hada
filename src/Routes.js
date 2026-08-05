@@ -44,7 +44,7 @@ export const TEACHER_ROUTES = [
         'url': '/myassignments'
     },
     {
-        'route': 'Student Questions',
+        'route': 'Forum',
         'url': '/forum'
     }
 ];

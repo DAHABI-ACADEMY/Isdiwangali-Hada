@@ -19,7 +19,7 @@ const TeacherOverview = ({profile, classes, notifications}) => {
             </Col>
             <Col md='9'>
             <Card className="welcome-card mt-4">
-                <h2>Welcome</h2>
+                <h2>Welcome to Dahabi Academy</h2>
                 <h4 className="username">{profile.name}</h4>
             </Card>            
             <Card className="welcome-card mt-4">
