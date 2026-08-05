@@ -49,7 +49,7 @@ const ForumQuestionCard = ({question, profile, removeQuestion, removeComment, ad
                 </Col>    
         </Row></div>}  
         <div className="comments">
-        <p className="m-2 answers">{question.answers.length === 0 ? 'No Answers Yet' : 'Answers'}</p>     
+        <p className="m-2 answers">{question.answers.length === 0 ? 'No answers yet' : 'Answers'}</p>
         {question.answers.map((a) =>( 
             <ListGroup className="comment">
                 <ListGroupItem>

@@ -30,18 +30,18 @@ const Assignments = ({branches, profile}) => {
 
             <Row md='12'>
                 <Col md='3'>
-                    <p>Select Branch</p>
+                    <p>Filter by Branch</p>
                     </Col>
                 <Col >
                     <Input type="select" className="selector" name="select" id="branch" onChange={handleBranch}>
-                        <option value='All' defaultValue>All Students</option>
+                        <option value='All' defaultValue>All Branches</option>
                         {branches && branches.map(branch => (
                         <option key={branch.id} value={branch.name}>{branch.name}</option>
                         ))}           
                     </Input>
                 </Col>
                 <Col>
-                  {student ? undefined : <Button onClick={toggle} color="primary">Add Assignment</Button>}
+                  {student ? undefined : <Button className="btn-brand" onClick={toggle}>Add Assignment</Button>}
                 </Col>
             </Row>
         </Row>

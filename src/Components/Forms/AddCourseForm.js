@@ -27,7 +27,7 @@ const AddCourseForm = ({addCourse, branches}) => {
                     <Row className="mt-2">
                         <Label htmlFor="branch">Branch</Label>
                         <Input type="select" className="selector" name="select" id="branch" onChange={handleInputChange}>
-                            <option value='All'>All Students</option>
+                            <option value='All'>All Branches</option>
                             {branches && branches.map(branch => (
                             <option key={branch.id} value={branch.name}>{branch.name}</option>
                             ))}           
@@ -38,7 +38,7 @@ const AddCourseForm = ({addCourse, branches}) => {
                         <Input type="text"  id="teacher" onChange={handleInputChange}></Input>
                     </Row>
                 </Col>
-                <Button color="primary" type="submit" className="mt-4">
+                <Button type="submit" className="button mt-4">
                     Add Course 
                 </Button>
             </Container>

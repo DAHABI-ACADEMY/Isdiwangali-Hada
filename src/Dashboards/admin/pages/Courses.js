@@ -31,7 +31,7 @@ const Courses = ({branches, profile}) => {
                 </Col>
                 <Row md='12' className="m-0">
                     <Col md='2'>
-                        <p>Select Branch</p>
+                        <p>Filter by Branch</p>
                         </Col>
                     <Col md="4">
                         <Input type="select" className="selector mb-3 w-auto" name="select" id="branch" onChange={handleBranch}>
@@ -42,7 +42,7 @@ const Courses = ({branches, profile}) => {
                         </Input>
                     </Col>
                     <Col md="6">
-                         {admin ? <Button color='primary' className="mt-auto w-auto" onClick={toggle}>Add New Course</Button> : undefined}
+                         {admin ? <Button className="btn-brand mt-auto w-auto" onClick={toggle}>Add New Course</Button> : undefined}
                     </Col>
                 </Row>
             </Row>

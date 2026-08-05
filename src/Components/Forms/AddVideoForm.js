@@ -48,7 +48,7 @@ const AddVideoForm = ({course, addNewVideo}) => {
                     </UncontrolledTooltip>
                 </Col>
             </Row>
-            <Button color="primary" className="mt-3 mb-3" onClick={() => {handleFileUpload(video, course, name)}}>Add Video</Button>
+            <Button className="button mt-3 mb-3" onClick={() => {handleFileUpload(video, course, name)}}>Add Video</Button>
         </Container>
     )
 }

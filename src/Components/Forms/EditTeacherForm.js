@@ -97,7 +97,7 @@ const EditTeacherForm = ({teacher, updateTeacherInfo}) => {
                     <Input type="textarea" id="address" value={inputs.address} onChange={handleInputChange}></Input>
                 </Col>
             </Row>
-            <Button type="submit" className="mt-3 mb-3" color="primary">Edit Teacher</Button>
+            <Button type="submit" className="button mt-3 mb-3">Edit Teacher</Button>
             </Container>
         </Form>
     )

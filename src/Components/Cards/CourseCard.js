@@ -32,12 +32,12 @@ const CourseCard = ({courses, branch, sortedByBranch, removeCourse, admin}) => {
                                 <CardSubtitle className="mb-2 subtitle">{c.teacher}</CardSubtitle>
                                 <CardSubtitle className="mb-2 subtitle">{c.branch}</CardSubtitle>
                                 <CardSubtitle className="mb-2 subtitle">{c.courseId}</CardSubtitle>
-                                <Button  color="primary" className="mr-3">
+                                <Button className="btn-brand mr-3">
                                     <a href={`/courses/${c.title}`} className="link">
                                         View
                                     </a>
                                 </Button>
-                                {admin ? <Button onClick={toggle} color="danger"> Remove </Button> : undefined}
+                                {admin ? <Button className="btn-brand btn-brand--danger" onClick={toggle}>Remove</Button> : undefined}
                             </CardBody>
                         </Card> 
                         <CustomModal toggle={toggle} modal={isOpen} title="Remove Course">

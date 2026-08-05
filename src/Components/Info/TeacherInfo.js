@@ -10,9 +10,9 @@ import CustomModal from '../Modal/';
 import EditTeacherForm from '../Forms/EditTeacherForm'
 
 const dummy = {
-    'img': 'https://i.ibb.co/wd8cRVZ/img-person-placeholder.jpg',
+    'img': 'https://via.placeholder.com/300x300/00B4D8/FFFFFF?text=Dahabi+Academy',
     'name' : 'John Doe',
-    'SRN' : 'dsu1200'
+    'SRN' : 'DTH1200'
 }
 
 const TeacherInfo = ({teacher,updateTeacherDisplayPic}) => {
@@ -53,15 +53,13 @@ const TeacherInfo = ({teacher,updateTeacherDisplayPic}) => {
                 </button>
                     <CardImg src={currentTeacher.img || dummy.img} className="img rounded float-left">
                     </CardImg>
-                        <Button color="primary" className="button mt-2 mb-2" onClick={() => setIsOpen(true)}>Edit Info</Button>
-                </Col>
-                
+                        <Button className="button mt-2 mb-2" onClick={() => setIsOpen(true)}>Edit Info</Button>
                 <Col md="12">
                 <Card className="basic-info mt-3">
                     <h4>Basic Info</h4>
                     <Row md="6">
                         <Col md='4'>
-                            <p className="info-label">Student Name: <span className="s-name">{currentTeacher.name}</span></p>
+                            <p className="info-label">Teacher Name: <span className="s-name">{currentTeacher.name}</span></p>
                         </Col>
                         <Col md="4">
                             <p className="info-label">SRN: <span className="s-name">{currentTeacher.SRN}</span></p>

@@ -99,7 +99,7 @@ const EditStudentForm = ({student, updateStudentInfo, edited}) => {
                     <Input type="textarea" id="address" value={inputs.address} onChange={handleInputChange}></Input>
                 </Col>
             </Row>
-            <Button type="submit" className="mt-3 mb-3" color="primary">Edit Student</Button>
+            <Button type="submit" className="button mt-3 mb-3">Edit Student</Button>
             {edited && <CustomAlert alert={edited}></CustomAlert>}
             </Container>
         </Form>

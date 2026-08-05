@@ -22,7 +22,7 @@ const MyAssignments = ({profile}) => {
         <Row className='mb-3 m-0 mt-3'>
             <Row md='12'>
                 <Col>
-                    <Button onClick={toggle} color="primary">Add Assignment</Button>
+                    <Button className="btn-brand" onClick={toggle}>Add Assignment</Button>
                 </Col>
             </Row>
         </Row>

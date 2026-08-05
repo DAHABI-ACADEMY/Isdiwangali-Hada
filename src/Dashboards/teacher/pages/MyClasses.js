@@ -19,7 +19,7 @@ const MyClasses = ({profile}) => {
         <Row className='m-0'>
             <Row md='12'>
                 <Col>
-                    <Button onClick={toggle} color="primary">Add A Class</Button>
+                    <Button className="btn-brand" onClick={toggle}>Add Class</Button>
                 </Col>
             </Row>
         </Row>

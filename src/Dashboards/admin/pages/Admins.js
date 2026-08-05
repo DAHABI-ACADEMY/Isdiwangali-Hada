@@ -15,7 +15,7 @@ const Admins = () => {
         <Row>
             <Row md='12'>
                 <Col>
-                    <Button color='primary' className="mt-auto ml-3 w-auto" onClick={toggle}>Add Admin</Button>
+                    <Button className="btn-brand mt-auto ml-3 w-auto" onClick={toggle}>Add Admin</Button>
                 </Col>
             </Row>
         </Row>

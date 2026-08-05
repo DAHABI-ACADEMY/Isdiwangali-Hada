@@ -12,7 +12,7 @@ const ViewSubmissionContainer = ({assignment, profile}) => {
                     <p className="info-label">Student Name: <span className="s-name ml-3">{submission.name} </span></p>
                 </Row>
                 <Row>
-                    <p className="info-label">Submission Url: <a className="btn btn-primary ml-3" href={submission.url}>View</a></p>
+                    <p className="info-label">Submission Url: <a className="btn btn-brand ml-3" href={submission.url}>View</a></p>
                 </Row>
                 <Row>
                     <p className="info-label">Marks: <span className="s-name ml-3">{submission.marks}</span></p>

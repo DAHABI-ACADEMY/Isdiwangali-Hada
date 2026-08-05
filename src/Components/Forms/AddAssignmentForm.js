@@ -29,7 +29,7 @@ const AddAssignmentForm = ({branches, teachers, addNewAssignment, courses, profi
                 <Row className="mt-2">
                     <Label htmlFor="branch">Branch</Label>
                     <Input type="select" className="selector" name="select" id="branch" onChange={handleInputChange}>
-                        <option value='All'>All Students</option>
+                        <option value='All'>All Branches</option>
                         {branches && branches.map(branch => (
                         <option key={branch.id} value={branch.name}>{branch.name}</option>
                         ))}           
@@ -60,7 +60,7 @@ const AddAssignmentForm = ({branches, teachers, addNewAssignment, courses, profi
                     <Input type="date" id="lastDate" value={inputs.lastDate} onChange={handleInputChange}></Input>
                 </Row>
             </Col>
-            <Button color="primary" type="submit" className="mt-4">
+            <Button type="submit" className="button mt-4">
                 Add Assignment 
             </Button>
         </Container>

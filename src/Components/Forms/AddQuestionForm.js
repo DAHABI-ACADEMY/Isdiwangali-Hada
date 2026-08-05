@@ -21,19 +21,19 @@ const AddQuestionForm = ({addQuestion, courses, user}) => {
                 <Col>
                     <Row className="mt-2">
                         <Label htmlFor="question">Question</Label>
-                        <Input type="textarea"  id="question" placeholder="Add your question here" onChange={handleInputChange}></Input>
+                        <Input type="textarea"  id="question" placeholder="Type your question here" onChange={handleInputChange}></Input>
                     </Row>
                     <Row className="mt-2">
                         <Label htmlFor="topic">Course</Label>
                         <Input type="select" className="selector" name="select" id="topic" onChange={handleInputChange}>
-                            <option>Select Course</option>
+                            <option>Choose Course</option>
                             {courses && courses.map(course => (
                                 <option key={course.id} value={course.title}>{course.title}</option>
                             ))}           
                         </Input>
                     </Row>
                 </Col>
-                <Button color="primary" type="submit" className="mt-4">
+                <Button type="submit" className="button mt-4">
                     Add Question 
                 </Button>
             </Container>

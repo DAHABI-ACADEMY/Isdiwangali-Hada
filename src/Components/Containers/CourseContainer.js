@@ -37,8 +37,8 @@ const CourseContainer = ({course, profile}) => {
                 <h5 className="course-title">Course Title: <span className="c-title">{currentCourse.title || dummy.title}</span></h5>
                 <h5 className="course-title">Branch: <span className="c-title">{currentCourse.branch || dummy.branch}</span></h5>
                 <h5 className="course-title">Course Id: <span className="c-title">{currentCourse.courseId || dummy.courseId}</span></h5>
-                {isStudent ? ''  : <Button onClick={videoFormToggle} className="button navy">Add Video</Button>}
-                {isStudent ? ''  :<Button onClick={resourceFormToggle} className="button mt-2" color="primary">Add Resource</Button>}
+                {isStudent ? ''  : <Button onClick={videoFormToggle} className="button">Add Video</Button>}
+                {isStudent ? ''  :<Button onClick={resourceFormToggle} className="button mt-2">Add Resource</Button>}
             </Col>
         </Row>
         <Row className="mt-3 mb-3">
@@ -46,12 +46,12 @@ const CourseContainer = ({course, profile}) => {
                 <div className="mt-2 mb-3">
                     <h4 className="title">Course Videos</h4>
                 </div>
-                {currentCourse.videos ? 
-                <div className="w-100 mb-2 empty-div">
-                    <p className="center-text">No Videos yet!</p>
-                </div>
-                :
+                {currentCourse.videos && currentCourse.videos.length > 0 ? 
                 <VideoCard videos={currentCourse.videos} course={course}></VideoCard>
+                :
+                <div className="w-100 mb-2 empty-div">
+                    <p className="center-text">No course videos added yet.</p>
+                </div>
                 }
             </Col>
         </Row>
@@ -61,11 +61,12 @@ const CourseContainer = ({course, profile}) => {
                     <h4 className="title">Course Resources</h4>
                 </div>
                 
-                {currentCourse.videos ? 
+                {currentCourse.references && currentCourse.references.length > 0 ? 
+                <ResourceCard resources={currentCourse.references} course={course}></ResourceCard>
+                :
                 <div className="w-100 mb-2 empty-div">
-                    <p className="center-text">No Course Materials yet!</p>
-                </div>
-                : <ResourceCard resources={currentCourse.references} course={course}></ResourceCard>}
+                    <p className="center-text">No course resources yet.</p>
+                </div>}
             </Col>
         </Row>
             <CustomModal modal={isVideoFormOpen} title="Add New Video" toggle={videoFormToggle}>

@@ -55,7 +55,7 @@ const AddAdminForm = () => {
                         <Input type="text"  id="phone" onChange={handleInputChange}></Input>
                     </Row>
                 </Col>
-                <Button color="primary" type="submit" className="mt-4">
+                <Button type="submit" className="button mt-4">
                     Add Admin 
                 </Button>
             </Container>

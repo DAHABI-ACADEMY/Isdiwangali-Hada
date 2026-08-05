@@ -18,7 +18,7 @@ const AssignmentCard = ({assignment, handleAssignmentRemove, profile, uploadTogg
             <p className="ml-2 a-subtitle">Last Date For Submission: {assignment.lastDate}</p>
             <p className="ml-2 a-subtitle">Course: {assignment.course}</p>
             </CardTitle>
-            <Button className="a-btn" color="primary">
+            <Button className="btn-brand a-btn">
                 <a href={assignment.questionUrl} className="link">
                 View 
                 </a>

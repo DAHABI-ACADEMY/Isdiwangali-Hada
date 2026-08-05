@@ -24,11 +24,11 @@ const Students = ({branches}) => {
                 </Col>
                 <Row md='12'>
                     <Col md='5'>
-                        <p>Select Branch</p>
+                        <p>Filter by Branch</p>
                         </Col>
                     <Col md="auto">
                         <Input type="select" className="selector" name="select" id="branch" onChange={handleBranch}>
-                            <option value='All' defaultValue>All Students</option>
+                            <option value='All' defaultValue>All Branches</option>
                             {branches && branches.map(branch => (
                             <option key={branch.id} value={branch.name}>{branch.name}</option>
                             ))}           

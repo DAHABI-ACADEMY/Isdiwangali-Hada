@@ -38,7 +38,7 @@ export const signUp = (newUser) => {
       ).then(resp => {
         return firestore.collection('users').doc(resp.user.uid).set({
           name: newUser.name,
-          SRN: `acad${newUser.branch}${uid()}`,
+          SRN: `DAHABI-${newUser.branch}-${uid()}`,
           Branch: newUser.branch,
           userType: newUser.type, 
           phone: newUser.phone,

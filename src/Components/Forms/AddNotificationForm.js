@@ -27,7 +27,7 @@ const AddNotificationForm = ({addNewNotification}) => {
                         <Input type="textarea"  id="desc" onChange={handleInputChange}></Input>
                     </Row>
                 </Col>
-                <Button color="primary" type="submit" className="mt-4">
+                <Button type="submit" className="button mt-4">
                     Add Notification 
                 </Button>
             </Container>

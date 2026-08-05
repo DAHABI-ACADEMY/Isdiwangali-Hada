@@ -48,7 +48,7 @@ const AddResourceForm = ({course, addResource}) => {
                     </UncontrolledTooltip>
                 </Col>
             </Row>
-            <Button color="primary" className="mt-3 mb-3" onClick={() => {handleFileUpload(file, course, name)}}>Add Resource</Button>
+            <Button className="button mt-3 mb-3" onClick={() => {handleFileUpload(file, course, name)}}>Add Resource</Button>
         </Container>
     )
 }

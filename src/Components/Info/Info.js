@@ -11,9 +11,9 @@ import EditStudentForm from '../Forms/EditStudentForm'
 import CustomAlert from '../Alert/'
 
 const dummy = {
-    'img': 'https://i.ibb.co/wd8cRVZ/img-person-placeholder.jpg',
+    'img': 'https://via.placeholder.com/300x300/00B4D8/FFFFFF?text=Dahabi+Academy',
     'name' : 'John Doe',
-    'SRN' : 'dsu1200'
+    'SRN' : 'DSU1200'
 }
 
 const InfoContainer = ({student,setStudentSuspended, updateStudentDisplayPic}) => {
@@ -58,8 +58,8 @@ const InfoContainer = ({student,setStudentSuspended, updateStudentDisplayPic}) =
                 </button>
                     <CardImg src={currentStudent.img || dummy.img} className="img rounded float-left">
                     </CardImg>
-                        <Button color='danger' className="button mt-3 mb-3" onClick={() => handleSuspend(currentStudent)}>{currentStudent.suspended ? 'Student Suspended' : 'Suspend Student'}</Button>
-                        <Button color="primary" className="button mb-2" onClick={() => setIsOpen(true)}>Edit Info</Button>
+                        <Button className="button mt-3 mb-3" onClick={() => handleSuspend(currentStudent)}>{currentStudent.suspended ? 'Student Suspended' : 'Suspend Student'}</Button>
+                        <Button className="button mb-2" onClick={() => setIsOpen(true)}>Edit Info</Button>
                 </Col>
                 
                 <Col md="12">

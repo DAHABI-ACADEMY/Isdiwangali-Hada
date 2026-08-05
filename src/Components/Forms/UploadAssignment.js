@@ -51,7 +51,7 @@ const UploadAssignmentForm = ({addNewSubmission, assignment, profile}) => {
                     <Input type="file" onChange={handleFile} id="pdfUpload"></Input>
                 </Col>
             </Row>
-            <Button color="primary" className="mt-3 mb-3" onClick={() => {handleFileUpload(file,student, currentAssigment, srn)}}>Upload Assignment</Button>
+            <Button className="button mt-3 mb-3" onClick={() => {handleFileUpload(file,student, currentAssigment, srn)}}>Upload Assignment</Button>
         </Container>
     )
 }

@@ -27,7 +27,7 @@ const Notification = ({notifications, profile}) => {
         {
             profile.userType === "Admin" ? 
             <ListGroupItem>
-                <Button color="primary" className="add-notif" onClick={formToggle}>Add a Notification</Button>
+                <Button className="button add-notif" onClick={formToggle}>Add Notification</Button>
             </ListGroupItem>
             : 
             undefined
