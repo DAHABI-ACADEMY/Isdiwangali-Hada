@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { Button, Col, Container, Form, Input, Label, Row } from 'reactstrap'

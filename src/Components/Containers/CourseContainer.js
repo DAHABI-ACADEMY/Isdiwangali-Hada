@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
-import { Button, Col, Container, Row } from 'reactstrap'
+import { Button, Col, Row } from 'reactstrap'
 import { compose } from 'redux'
 import ResourceCard from '../Cards/ResourceCard'
 import VideoCard from '../Cards/VideoCard'

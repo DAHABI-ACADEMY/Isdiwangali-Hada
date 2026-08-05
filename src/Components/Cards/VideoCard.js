@@ -23,7 +23,7 @@ const VideoCard = ({videos, course, removeVideo, profile}) => {
                                     <source src={v.url}></source>
                                 </Player>
                             <CardTitle className="video-title">{v.name}</CardTitle>
-                            { profile.userType == "Student" ? null : 
+                            { profile.userType === "Student" ? null : 
                             <Button color="danger" className="button w-25" onClick={() => handleDelete(course, v.name, v.url)}>Remove</Button>
                             }          
                          </Card>

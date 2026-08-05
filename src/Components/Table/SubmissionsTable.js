@@ -4,7 +4,7 @@ import { Button, Input, Table } from 'reactstrap';
 import { addMarks } from '../../Store/actions/assignmentActions';
 
 const SubmissionsTable = ({assignment, addMarks}) => {
-    const [currentAssigment, setCurrentAssignment] = useState(assignment)
+    const currentAssigment = assignment
     const [marks, setMarks] = useState('')
     const handleMarks = (assignment, submission, marks) => {
         addMarks(assignment, submission, marks)

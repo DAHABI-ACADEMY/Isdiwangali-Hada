@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import {Row, Container, Col} from 'reactstrap'
+import {Row, Container} from 'reactstrap'
 
 const ViewSubmissionContainer = ({assignment, profile}) => {
-    const [currentAssigment, setCurrentAssignment] = useState(assignment);
+    const [currentAssigment] = useState(assignment);
     const submission = currentAssigment.submissions.find((s) => s.name === profile.name)
     return(
         <Container>

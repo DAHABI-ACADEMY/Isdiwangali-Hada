@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { addNewSubmission } from '../../Store/actions/assignmentActions'
 
 const UploadAssignmentForm = ({addNewSubmission, assignment, profile}) => {
-    const [currentAssigment, setCurrentAssignment] = useState(assignment)
+    const [currentAssigment] = useState(assignment)
     const student = profile.name;
     const srn = profile.SRN;
     const [file, setFile] = useState(undefined);

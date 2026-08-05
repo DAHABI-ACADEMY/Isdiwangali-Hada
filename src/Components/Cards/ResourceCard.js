@@ -26,7 +26,7 @@ const ResourceCard = ({resources, course, profile, removeResource}) => {
                                     View
                                 </a> 
                             </Button>
-                            { profile.userType == "Student" ? null : 
+                            { profile.userType === "Student" ? null : 
                             <Button color="danger" className="button w-25" onClick={() => handleDelete(course, r.name, r.url)}>Remove</Button>
                             }                               
                         </Card>

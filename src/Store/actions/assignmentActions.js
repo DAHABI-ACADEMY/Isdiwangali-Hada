@@ -1,5 +1,3 @@
-import { storage } from "../../config/fbConfig";
-
 export const addNewAssignment = (assignment) => {
     return (dispatch, getState, {getFirestore}) => {
         const firestore = getFirestore();
@@ -45,7 +43,6 @@ export const removeAssignment = (assignment) => {
 
 export const addMarks = (assignment, submission, marks) => {
     return (dispatch, getState, {getFirebase}) => {
-        const firebase = getFirebase();
         const firestore = getFirebase().firestore();
 
         firestore

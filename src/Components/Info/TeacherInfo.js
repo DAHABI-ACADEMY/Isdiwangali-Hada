@@ -47,7 +47,7 @@ const TeacherInfo = ({teacher,updateTeacherDisplayPic}) => {
                     <Col md="4">
                         <button className="upload-wrapper" type="file">
                             <label className="camera-icon" htmlFor="profile_picture">
-                                <img src={Camera}></img>
+                                <img src={Camera} alt="Upload profile" />
                             </label>
                             <input type="file" id="profile_picture" hidden onChange={(e) => {e.preventDefault(); handleUpload(e.target.files[0], currentTeacher)}}></input>
                         </button>

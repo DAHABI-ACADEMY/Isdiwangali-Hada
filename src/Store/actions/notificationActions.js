@@ -2,8 +2,6 @@ export const addNewNotification = (notification) => {
     return (dispatch, getState, {getFirestore, getFirebase}) => {
         const firestore = getFirestore();
 
-        const date = new Date();
-
         firestore
             .add({collection: 'adminnotifications'},
                 {

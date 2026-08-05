@@ -7,11 +7,9 @@ import AdminDashboard from './Dashboards/admin/AdminDashboard'
 import StudentDashboard from './Dashboards/student/StudentDashboard'
 import TeacherDashboard from './Dashboards/teacher/TeacherDashboard'
 import {connect} from 'react-redux';
-import './App.css'
 import ErrorPage from './Errorpage';
 import CustomNavbar from './Components/Navbar/Navbar';
 import {ADMIN_ROUTES, STUDENT_ROUTES, TEACHER_ROUTES} from './Routes'
-import CustomAlert from './Components/Alert'
 
 
 

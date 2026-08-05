@@ -7,44 +7,38 @@ const initialState = {
 
 const studentReducer = (state= initialState, action) => {
     switch(action.type){
-        case 'SUSPEND_STUDENT_SUCESSS': {
+        case 'SUSPEND_STUDENT_SUCESSS':
             return {
                 ...state,
                 suspend: action.suspend,
             }
-        };
-        case 'SUSPEND_ERROR': {
+        case 'SUSPEND_ERROR':
             return{
                 ...state,
                 suspend: action.error            
             }
-        };
-        case 'STUDENT_UPDATE_FAILED': {
+        case 'STUDENT_UPDATE_FAILED':
             return{
                 ...state,
                 edited: action.error
             }
-        };
-        case 'STUDENT_UPDATED': {
+        case 'STUDENT_UPDATED':
             return{
                 ...state,
                 edited: action.success
             }
-        };
-        case 'IMAGE_UPLOADED': {
+        case 'IMAGE_UPLOADED':
             return{
                 ...state,
                 upload: action.success
             }
-        };
-        case 'IMAGE_UPLOAD_ERROR': {
+        case 'IMAGE_UPLOAD_ERROR':
             return{
                 ...state,
                 upload: action.error
             }
-        };
         default: 
-        return state;
+            return state;
     }
 }
 

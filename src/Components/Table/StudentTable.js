@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { firestoreConnect } from 'react-redux-firebase'
 import {connect} from 'react-redux'
 import { compose } from 'redux'
-import {Button, Form, Input, Table} from 'reactstrap'
+import {Button, Table} from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 import {setStudentSuspended} from '../../Store/actions/studentActions'
 

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
-import { Container, Col, Row, Button, Card } from 'reactstrap'
+import { Container, Col, Row, Button } from 'reactstrap'
 import CustomModal from '../../Components/Modal'
 import { compose } from 'redux'
 import ForumQuestionCard from '../../Components/Cards/ForumQuestionCard'

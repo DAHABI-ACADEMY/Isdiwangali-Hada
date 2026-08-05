@@ -5,7 +5,6 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import CustomModal from '../../Components/Modal'
 import { removeCourse } from '../../Store/actions/courseActions'
-import { NavLink } from 'react-router-dom'
 
 
 
