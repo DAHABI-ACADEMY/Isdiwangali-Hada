@@ -19,7 +19,7 @@ const CourseCard = ({courses, branch, sortedByBranch, removeCourse, admin}) => {
 
     const toggle = () => setIsOpen(!isOpen)
 
-    const sortedCourses =  branch === "All Branches" ? courses : sortedByBranch;
+    const sortedCourses =  branch === "All" ? courses : sortedByBranch;
 
     return(
         <React.Fragment>

@@ -8,7 +8,7 @@ import CustomModal from '../../../Components/Modal'
 import AddCourseForm from '../../../Components/Forms/AddCourseForm'
 
 const Courses = ({branches, profile}) => {
- const [branch, setBranch] = useState('All Branches')
+ const [branch, setBranch] = useState('All')
 
  const admin = profile.userType === "Admin" ? true : false;
 
@@ -35,7 +35,7 @@ const Courses = ({branches, profile}) => {
                         </Col>
                     <Col md="4">
                         <Input type="select" className="selector mb-3 w-auto" name="select" id="branch" onChange={handleBranch}>
-                            <option value='All Branches' defaultValue>All Branches</option>
+                            <option value='All' defaultValue>All Branches</option>
                             {branches && branches.map(branch => (
                             <option key={branch.id} value={branch.name}>{branch.name}</option>
                             ))}           

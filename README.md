@@ -1,6 +1,6 @@
-# Dahabi Academy — Learning Management System
+# Dahabi Academy
 
-This repository is the Dahabi Academy Learning Management System (LMS) template adapted from an open-source starter.
+This repository is the Dahabi Academy education platform template adapted from an open-source starter.
 
 ### Tech Stack
 
