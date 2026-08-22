@@ -922,23 +922,10 @@ Upload Payment Screenshot</label>
   </script>
 
    <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
-    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
-    import { getDatabase, ref, runTransaction } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-database.js";
+    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+    import { supabaseConfig, emailJsConfig } from "./config.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDrQ-tycjjDU4gek1jz07IIg30VFio-1so",
-      authDomain: "dahabi-academy.firebaseapp.com",
-      projectId: "dahabi-academy",
-      storageBucket: "dahabi-academy.firebasestorage.app",
-      messagingSenderId: "754314547074",
-      appId: "1:754314547074:web:cac5ac7ae057af9c0a499b",
-      databaseURL: "https://dahabi-academy-default-rtdb.firebaseio.com"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const rtdb = getDatabase(app);
+    const supabase = createClient(supabaseConfig.url, supabaseConfig.publishableKey);
 
     const coursePriceDetails = {
       "computer": { current: "$0.00 USD", original: "$0.00 USD" },
@@ -1138,21 +1125,8 @@ Upload Payment Screenshot</label>
 
       const rawEmail = document.getElementById('email').value.trim().toLowerCase();
 
-      let nextID = Math.floor(Math.random() * 900) + 100;
-      try {
-        const counterRef = ref(rtdb, "current_number");
-        const result = await runTransaction(counterRef, (currentValue) => {
-            if (currentValue === null) return 101;
-            return currentValue + 1;
-        });
-        if(result.committed) {
-          nextID = result.snapshot.val();
-        }
-      } catch(rtdbErr) {
-        console.warn("Realtime Database counter error, using random fallback", rtdbErr);
-      }
-
-      const generatedStudentID = `DA-${nextID}`;
+      let generatedStudentID = "";
+      let registrationSaved = false;
       const fName = document.getElementById('firstName').value.trim();
       const mName = document.getElementById('middleName').value.trim();
       const lName = document.getElementById('lastName').value.trim();
@@ -1160,39 +1134,41 @@ Upload Payment Screenshot</label>
       const selectedCourseText = courseSelect.options[courseSelect.selectedIndex].text;
 
       try {
-        let receiptBase64 = "No receipt required (Free Course)";
+        let receiptBase64 = null;
         const receiptInput = document.getElementById('receiptFile');
         if (selectedCourse !== 'computer' && receiptInput && receiptInput.files.length > 0) {
           receiptBase64 = await convertFileToBase64(receiptInput.files[0]);
         }
-        
+
         const registrationData = {
-          studentID: generatedStudentID,
-          firstName: fName,
-          middleName: mName,
-          lastName: lName,
-          age: document.getElementById('age').value.trim(),
+          first_name: fName,
+          middle_name: mName,
+          last_name: lName,
+          age: Number(document.getElementById('age').value),
           gender: maleChecked ? "Male" : "Female",
           email: rawEmail,
           phone: document.getElementById('phone').value.trim(),
-          countryCode: document.getElementById('countryCode').value,
-          fullAddress: document.getElementById('fullAddress').value.trim(),
+          country_code: document.getElementById('countryCode').value,
+          full_address: document.getElementById('fullAddress').value.trim(),
           course: selectedCourse,
-          courseTitleFull: selectedCourseText,
-          coursePrice: document.getElementById('coursePrice').value || "$7/Month",
-          referralSource: document.getElementById('referralSource').value,
-          hasLaptop: laptopYes ? "Haa" : "Maya",
-          timeCommitment: commitYes ? "Haa" : "Maya",
-          feeAgreement: selectedCourse === 'computer' ? "Free (No fee)" : (feeYes ? "Haa" : "Maya"),
-          message: document.getElementById('message').value.trim(),
-          receiptImage: receiptBase64,
-          createdAt: new Date().toISOString()
+          course_title_full: selectedCourseText,
+          course_price: document.getElementById('coursePrice').value || "$7/Month",
+          referral_source: document.getElementById('referralSource').value,
+          has_laptop: laptopYes ? "Haa" : "Maya",
+          time_commitment: commitYes ? "Haa" : "Maya",
+          fee_agreement: selectedCourse === 'computer' ? "Free (No fee)" : (feeYes ? "Haa" : "Maya"),
+          message: document.getElementById('message').value.trim() || null,
+          receipt_image_data_url: receiptBase64
         };
 
-        // 1. KUU KAYDI FIRESTORE
-        await setDoc(doc(db, "registrations", rawEmail), registrationData);
+        const { data: studentId, error: registrationError } = await supabase
+          .rpc('submit_registration', { payload: registrationData });
 
-        // 2. TOOS U WAC EMAILJS (Halkan ayaa la saxay)
+        if (registrationError) throw registrationError;
+        generatedStudentID = studentId;
+        registrationSaved = true;
+
+        // TOOS U WAC EMAILJS (Halkan ayaa la saxay)
         try {
           const templateParams = {
               student_name: `${fName} ${mName} ${lName}`,
@@ -1202,22 +1178,25 @@ Upload Payment Screenshot</label>
           };
           
           // Wacitaanka rasmiga ah ee EmailJS
-          await window.emailjs.send('service_r7vc2z6', 'template_knxi9ef', templateParams);
+          await window.emailjs.send(emailJsConfig.serviceId, emailJsConfig.templateId, templateParams);
           console.log("EmailJS: Email-ka si guul leh ayaa loo diray!");
         } catch(emailErr) {
           console.error("EmailJS Error details:", emailErr);
         }
 
       } catch (e) {
-        console.warn("Cilad guud: ", e);
+        console.error("Registration submission failed:", e);
+        alert("Waan ka xunnahay, xogta lama kaydin. Fadlan mar kale isku day.");
       } finally {
         form.classList.remove('form-locked');
         submitBtn.disabled = false;
         btnSpinner.style.display = "none";
         btnText.innerText = "ISDIWAANGALI HADA";
-        
-        document.getElementById('successIdMessage').innerHTML = `Ku soo dhawoow Dahabi Academy. Xogtaada isdiwaangalinta si guul leh ayaa loo helay. ID-gaaga rasmiga ah waa: <b>${generatedStudentID}</b>. Dhawaan ayaan kula soo xiriiri doonaa, Lasoco dhaqdhaqaaqa Gmail-kaga & Whatsapp-kaga.`;
-        document.getElementById('successCard').style.display = 'flex';
+
+        if (registrationSaved) {
+          document.getElementById('successIdMessage').innerHTML = `Ku soo dhawoow Dahabi Academy. Xogtaada isdiwaangalinta si guul leh ayaa loo helay. ID-gaaga rasmiga ah waa: <b>${generatedStudentID}</b>. Dhawaan ayaan kula soo xiriiri doonaa, Lasoco dhaqdhaqaaqa Gmail-kaga & Whatsapp-kaga.`;
+          document.getElementById('successCard').style.display = 'flex';
+        }
       }
     }
 
